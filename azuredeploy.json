@@ -32,8 +32,6 @@
             "apiVersion": "2015-08-01",
             "location": "West Europe",
             "properties": {
-                "DOCKER_CUSTOM_IMAGE_NAME": "lastcoolnameleft/clj-az-ure",
-                "docker_custom_image_name": "lastcoolnameleft/clj-az-ure",
                 "name": "[parameters('serverfarms_ServicePlana2bbde64_8d23_name')]",
                 "numberOfWorkers": 1
             },
@@ -52,7 +50,7 @@
             },
             "properties": {
                 "DOCKER_CUSTOM_IMAGE_NAME": "lastcoolnameleft/clj-az-ure",
-                "docker_custom_image_name": "lastcoolnameleft/clj-az-ure",
+                "reserved": "true",
                 "name": "[parameters('sites_lastcoolnameleft_clojure_name')]",
                 "hostNames": [
                     "lastcoolnameleft-clojure.azurewebsites.net"
