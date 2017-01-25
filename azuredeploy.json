@@ -2,23 +2,19 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "DOCKER_CUSTOM_IMAGE_NAME": {
-            "defaultValue": "lastcoolnameleft/clj-az-ure",
+        "serverfarms_LukaszASP3_name": {
+            "defaultValue": "LukaszASP3",
             "type": "String"
         },
-        "serverfarms_ServicePlana2bbde64_8d23_name": {
-            "defaultValue": "ServicePlana2bbde64-8d23",
-            "type": "String"
-        },
-        "sites_lastcoolnameleft_clojure_name": {
-            "defaultValue": "lastcoolnameleft-clojure",
+        "sites_lukasztest123456_name": {
+            "defaultValue": "lukasztest123456",
             "type": "String"
         }
     },
     "variables": {},
     "resources": [
         {
-            "comments": "Generalized from resource: '/subscriptions/df8428d4-bc25-4601-b458-1c8533ceec0b/resourceGroups/sandbox-webapp-linux/providers/Microsoft.Web/serverfarms/ServicePlana2bbde64-8d23'.",
+            "comments": "Generalized from resource: '/subscriptions/8d57ddbd-c779-40ea-b660-1015f4bf027d/resourceGroups/LukaszRGLinux3/providers/Microsoft.Web/serverfarms/LukaszASP3'.",
             "type": "Microsoft.Web/serverfarms",
             "sku": {
                 "name": "S1",
@@ -28,52 +24,53 @@
                 "capacity": 1
             },
             "kind": "linux",
-            "name": "[parameters('serverfarms_ServicePlana2bbde64_8d23_name')]",
+            "name": "[parameters('serverfarms_LukaszASP3_name')]",
             "apiVersion": "2015-08-01",
             "location": "West Europe",
             "properties": {
-                "name": "[parameters('serverfarms_ServicePlana2bbde64_8d23_name')]",
+                "name": "[parameters('serverfarms_LukaszASP3_name')]",
                 "numberOfWorkers": 1
             },
             "resources": [],
             "dependsOn": []
         },
         {
-            "comments": "Generalized from resource: '/subscriptions/df8428d4-bc25-4601-b458-1c8533ceec0b/resourceGroups/sandbox-webapp-linux/providers/Microsoft.Web/sites/lastcoolnameleft-clojure'.",
+            "comments": "Generalized from resource: '/subscriptions/8d57ddbd-c779-40ea-b660-1015f4bf027d/resourceGroups/LukaszRGLinux3/providers/Microsoft.Web/sites/lukasztest123456'.",
             "type": "Microsoft.Web/sites",
             "kind": "app",
-            "name": "[parameters('sites_lastcoolnameleft_clojure_name')]",
+            
+            "name": "[parameters('sites_lukasztest123456_name')]",
             "apiVersion": "2015-08-01",
             "location": "West Europe",
             "tags": {
-                "hidden-related:/subscriptions/df8428d4-bc25-4601-b458-1c8533ceec0b/resourcegroups/sandbox-webapp-linux/providers/Microsoft.Web/serverfarms/ServicePlana2bbde64-8d23": "empty"
+                "hidden-related:/subscriptions/8d57ddbd-c779-40ea-b660-1015f4bf027d/resourcegroups/LukaszRGLinux3/providers/Microsoft.Web/serverfarms/LukaszASP3": "empty"
             },
             "properties": {
                 "DOCKER_CUSTOM_IMAGE_NAME": "lastcoolnameleft/clj-az-ure",
                 "reserved": "true",
-                "name": "[parameters('sites_lastcoolnameleft_clojure_name')]",
+                "name": "[parameters('sites_lukasztest123456_name')]",
                 "hostNames": [
-                    "lastcoolnameleft-clojure.azurewebsites.net"
+                    "lukasztest123456.azurewebsites.net"
                 ],
                 "enabledHostNames": [
-                    "lastcoolnameleft-clojure.azurewebsites.net",
-                    "lastcoolnameleft-clojure.scm.azurewebsites.net"
+                    "lukasztest123456.azurewebsites.net",
+                    "lukasztest123456.scm.azurewebsites.net"
                 ],
                 "hostNameSslStates": [
                     {
-                        "name": "[concat(parameters('sites_lastcoolnameleft_clojure_name'),'.azurewebsites.net')]",
+                        "name": "[concat(parameters('sites_lukasztest123456_name'),'.azurewebsites.net')]",
                         "sslState": 0,
                         "thumbprint": null,
                         "ipBasedSslState": 0
                     },
                     {
-                        "name": "[concat(parameters('sites_lastcoolnameleft_clojure_name'),'.scm.azurewebsites.net')]",
+                        "name": "[concat(parameters('sites_lukasztest123456_name'),'.scm.azurewebsites.net')]",
                         "sslState": 0,
                         "thumbprint": null,
                         "ipBasedSslState": 0
                     }
                 ],
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ServicePlana2bbde64_8d23_name'))]"
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_LukaszASP3_name'))]"
             },
             "resources": [
                 {
@@ -82,12 +79,13 @@
                   "type": "config",
                   "dependsOn": [],
                   "properties": {
-                    "DOCKER_CUSTOM_IMAGE_NAME": "lastcoolnameleft/clj-az-ure"
+                    "DOCKER_CUSTOM_IMAGE_NAME": "lastcoolnameleft/clj-az-ure",
+                    "reserved": "true"
                   }
                 }
             ],
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ServicePlana2bbde64_8d23_name'))]"
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_LukaszASP3_name'))]"
             ]
         }
     ]
