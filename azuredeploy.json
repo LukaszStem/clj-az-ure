@@ -72,18 +72,7 @@
                 ],
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_LukaszASP3_name'))]"
             },
-            "resources": [
-                {
-                  "apiVersion": "2014-11-01",
-                  "name": "appsettings",
-                  "type": "config",
-                  "dependsOn": [],
-                  "properties": {
-                    "DOCKER_CUSTOM_IMAGE_NAME": "lastcoolnameleft/clj-az-ure",
-                    "reserved": "true"
-                  }
-                }
-            ],
+            "resources": [],
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_LukaszASP3_name'))]"
             ]
